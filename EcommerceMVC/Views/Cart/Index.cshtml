@@ -1,0 +1,60 @@
+﻿@using EcommerceMVC.Models;
+@model IEnumerable<Cart>
+
+<h1 style="text-align: center">List Of Cart</h1>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn"asp-area="" asp-controller="Cart" asp-action="Create"><span>+ Cart</span></a>
+</div>
+<ul class="row feature-list feature-list-sm">
+    @foreach (var item in Model)
+    {
+    <div class="card" style="width: 18rem;margin:10px">
+         <img src="https://cdn.pixabay.com/photo/2015/11/06/11/49/shopping-cart-1026501_960_720.jpg" class="card-img-top" alt="...">
+         <div class="card-header">
+            Card Name
+         </div>
+         <div class="card-body">
+             <h5 class="card-title">@item.Name</h5>
+             <a class="btn" asp-controller="CartItem" asp-action="Add" asp-route-id="@item.Id"><span>+ Add To This Cart</span></a>
+             <br><br>
+             <a type="button" asp-controller="CartItem" asp-action="ViewAll" asp-route-id="@item.Id">View</a>
+         </div>
+     </div>
+    }
+</ul>
+<style>
+    .btn {
+  font-family: "Sentinel A","Sentinel B",Georgia,serif; 
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  background: #4383c5;
+  color: #FFF;
+  padding: 6px 20px 7px; 
+  font-size: 18px;
+  line-height: 23px;
+  min-width: 50px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle; 
+  border: 1px solid 4383c5;
+  cursor: pointer;
+  font-weight: 600px; 
+  transition: opacity 0.1s ease-out,background 0.1s ease-out;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),0 1px 3px rgba(0,0,0,0.4);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),0 1px 3px rgba(0,0,0,0.4);
+  -webkit-transition: opacity 0.1s ease-out,background 0.1s ease-out;
+}
+
+
+.btn:hover
+{
+  background-color: #356fac; 
+}
+body{
+          margin: 0PX;
+          padding: 0px;
+          background: url('https://media.istockphoto.com/id/1340117122/photo/cube-with-shopping-trolley-symbol-on-the-laptop-keyboard.jpg?b=1&s=170667a&w=0&k=20&c=PU8iTTvTj6TV6_Quy9Z7KQJoOgY-rp_rqI9FbFNFYEw=');   
+          background-repeat: no-repeat;
+          background-size: 100%;
+   }
+</style>

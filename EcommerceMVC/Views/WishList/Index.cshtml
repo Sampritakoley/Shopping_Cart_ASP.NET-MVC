@@ -1,0 +1,62 @@
+﻿@using EcommerceMVC.Models;
+@model IEnumerable<WishList>
+
+
+<h1 style="text-align:center">List Of WishList</h1>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+     <a class="btn"  asp-area="" asp-controller="WishList" asp-action="Create"><span>+ Wishlist</span></a>
+    
+</div>
+<ul class="row feature-list feature-list-sm">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem;margin:10px; height:500px">
+         <img src="https://img.freepik.com/premium-vector/wishlist-icon-simple-element-from-ecommerce-collection-creative-wishlist-icon-web-design-templates-infographics-more_676904-1204.jpg?w=2000" class="card-img-top" alt="...">
+         <div class="card-header">
+            Wishlist Name
+         </div>
+         <div class="card-body">
+             <h5 class="card-title">@item.Name</h5>
+             <a class="btn"  asp-controller="WishList" asp-action="Add" asp-route-id="@item.Id"><span>+ Add To This WishList</span></a>
+          <a type="button" style="margin:30px" asp-controller="WishList" asp-action="Detail" asp-route-id="@item.Id">View</a>
+          <a type="button" style="margin:30px" asp-controller="WishList" asp-action="Delete" asp-route-id="@item.Id"><img src="https://png.pngtree.com/png-clipart/20220703/original/pngtree-metal-trash-can-icon-digital-red-for-any-design-isolated-on-png-image_8274642.png" height="45px" width="50px" right="55px"></a>
+         </div>
+     </div>
+  }
+</ul>
+        <style>
+            .btn {
+  font-family: "Sentinel A","Sentinel B",Georgia,serif; 
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  background: #4383c5;
+  color: #FFF;
+  padding: 6px 20px 7px; 
+  font-size: 18px;
+  line-height: 23px;
+  min-width: 50px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle; 
+  border: 1px solid 4383c5;
+  cursor: pointer;
+  font-weight: 600px; 
+  transition: opacity 0.1s ease-out,background 0.1s ease-out;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),0 1px 3px rgba(0,0,0,0.4);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),0 1px 3px rgba(0,0,0,0.4);
+  -webkit-transition: opacity 0.1s ease-out,background 0.1s ease-out;
+}
+
+
+.btn:hover
+{
+  background-color: #356fac; 
+}
+body{
+          margin: 0PX;
+          padding: 0px;
+          background: url('https://img.freepik.com/free-vector/watercolor-sugar-cotton-clouds-background_52683-80661.jpg?w=2000');   
+          background-repeat: no-repeat;
+          background-size: 100%;
+   }
+        </style>

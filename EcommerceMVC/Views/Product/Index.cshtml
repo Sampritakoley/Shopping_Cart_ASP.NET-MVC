@@ -1,0 +1,38 @@
+﻿@using EcommerceMVC.Models;
+@model IEnumerable<Product>;
+
+<h1>List Of Product</h1>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a style="text-align:center; text-decoration:none;width:250px;height:40px; background-color:cornflowerblue;color:white;padding:10px;border-radius:5px" asp-area="" asp-controller="Product" asp-action="Create">Add New Product</a>
+</div>
+<ul class="row feature-list feature-list-sm">
+    @foreach (var item in Model)
+    {
+       <div class="card" style="width: 18rem; border:1px solid black ; margin:6px">
+          <div class="card-body">
+              <h5 class="card-title">@item.Name</h5>
+              <p class="card-text">Manufacturing Date: @item.ManufacturingDate</p>
+              <p class="card-text">Brand Name: @item.BrandName</p>
+              <p class="card-text">No Of Product Available: @item.NoOfProduct</p>
+              <p class="card-text">Price: @item.Price</p>
+              <p class="card-text">Availability: @item.Availability</p>
+                 <div class="card">
+                        @if (@item.Image != null)
+                        {
+                            <img class="card-img-top" src="@item.Image" alt="Card image cap">   
+                        }
+                        else
+                        {
+                            <img class="card-img-top" src="/img/rungroopclub.png" alt="Card image cap">
+                        }
+                        <a type="button" asp-controller="Product" asp-action="AddToCart" asp-route-id="@item.Id">Add To Cart</a><br><br>
+                        <a type="button" asp-controller="Product" asp-action="AddToWishList" asp-route-id="@item.Id">Add To WishList</a>
+                  </div>
+                  <form method="post" asp-controller="Product" asp-action="">
+                       <span>Price:</span><input type="text" name="PriceRange"/>
+                       <input type="submit" value="Search"/>
+                  </form>
+            </div>
+       </div>
+    }
+</ul>

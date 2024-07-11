@@ -1,0 +1,71 @@
+﻿<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <li id="ele1"><a  style="color:black; font-size:120%; margin :30px" asp-area="" asp-controller="Account" asp-action="Index">Home</a></li>
+        </li>
+        <li class="nav-item">
+          <li id="ele1"><a style="color:black;font-size: 120%;margin :30px" asp-area="" asp-controller="ProductCategory" asp-action="Index">Product Category</a></li>
+        </li>
+        <li class="nav-item">
+          <li id="ele4"><a style="color:black;font-size: 120%;margin :30px" asp-area="" asp-controller="Brand" asp-action="Index">Brand</a></li>
+        </li>
+         <li class="nav-item">
+          <li id="ele5"><a style="color:black;font-size: 120%;margin-left :30px; margin-right:400px" asp-area="" asp-controller="Profile" asp-action="GetProfileBYId">Profile</a></li>
+        </li>
+      <div>
+            
+            <a style="margin:20px;color:black;right:55px; font-size: 100%; margin-right:10px" asp-area="" asp-controller="Cart" asp-action="Index"><img src="https://www.vhv.rs/dpng/d/450-4501272_transparent-background-shopping-cart-icon-hd-png-download.png" height="40px" width="40px" right="55px"></a>
+            
+            <a style="margin:20px;color:black;font-size: 100%;" asp-area="" asp-controller="WishList" asp-action="Index"><img src="https://w7.pngwing.com/pngs/978/882/png-transparent-wishlist-save-save-for-later-shopping-ecommerce-favorite-add-to-wishlist-ecommerce-online-shopping-icon-thumbnail.png" height="40px" width="40px"></a>
+       </div>
+       </ul>
+    </div>
+  </div>
+</nav>
+</body>
+<style>
+   body{
+          margin: 0PX;
+          padding: 0px;
+          background: url('https://img.freepik.com/free-photo/black-friday-elements-assortment_23-2149074076.jpg');   
+          background-repeat: no-repeat;
+          background-size: 100%;
+   }
+        #ele1{
+            
+            margin: 10px;
+        }
+        #ele2{
+            margin: 10px;
+        }
+        #ele3{
+            margin: 10px;
+        }
+        #ele4{
+            margin: 10px;
+        }
+        #ele5{
+            margin: 10px;
+        }
+        .navbar li{
+            display: inline-block;
+        }
+        .navbar li a:hover, .navbar li a:active{
+            color: gray;
+            text-decoration:overline; 
+        }
+        .right{
+            padding: 10px;
+            position: absolute;
+            top:75px;
+            right:55px;
+            border-radius: 30px;
+        }
+        .container-fluid{
+            background-color:White;
+            border-radius:50px;
+        }
+</style>

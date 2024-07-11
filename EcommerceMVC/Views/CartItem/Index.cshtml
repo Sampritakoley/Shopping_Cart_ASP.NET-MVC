@@ -1,0 +1,38 @@
+﻿@using EcommerceMVC.Models;
+@model IEnumerable<CartItem>;
+<div class="container-fluid">
+<h2>All Added Poroducts</h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">IsOutOfStock</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach(var item in Model)
+      {
+          <tr>
+              <th scope="row">@item.Id</th>
+              <td>@item.Name</td>
+              <td>@item.price</td>
+              <td>@item.Quantity</td>
+              <td>@item.IsOUtOfStock</td>
+              <th class="sorting">
+                  @Html.ActionLink("Remove", "Remove", new { id = item.Id })
+              </th>
+              <th class="sorting">
+                  @Html.ActionLink("Add More", "AddMore", new { id = item.Id })
+              </th>
+              <th class="sorting">
+                  @Html.ActionLink("Remove One", "RemoveOne", new { id = item.Id })
+              </th>
+         </tr>
+      }
+     <a type="button" asp-controller="OrderDetail" asp-action="PlaceOrder">Order Now</a>
+  </tbody>
+</table>
+</div>

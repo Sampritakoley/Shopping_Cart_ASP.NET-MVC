@@ -1,0 +1,28 @@
+﻿@using EcommerceMVC.Models;
+@model IEnumerable<Brand>;
+
+<h1>List Of Brand</h1>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a style="text-align:center; text-decoration:none;width:250px;height:40px; background-color:cornflowerblue;color:white;padding:10px;border-radius:5px" asp-area="" asp-controller="Brand" asp-action="Create">Add New Brand</a>
+</div>
+<ul class="row feature-list feature-list-sm">
+    @foreach (var item in Model)
+    {
+       <div class="card" style="width: 18rem; border:1px solid black ; margin:6px">
+          <div class="card-body">
+              <h5 class="card-title">@item.Name</h5>
+                 <div class="card">
+                        @if (@item.Logo != null)
+                        {
+                            <img class="card-img-top" src="@item.Logo" alt="Card image cap">   
+                        }
+                        else
+                        {
+                            <img class="card-img-top" src="/img/rungroopclub.png" alt="Card image cap">
+                        }
+                        <a type="button" asp-controller="Brand" asp-action="Detail" asp-route-id="@item.id">View All</a><br><br>
+                  </div>
+            </div>
+       </div>
+    }
+</ul>

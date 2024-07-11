@@ -1,0 +1,74 @@
+﻿@using EcommerceMVC.ViewModel;
+@model ProfileViewModel
+
+<h1>Profile</h1>
+
+<div class="card">
+        <div class="cover-photo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPCXISA7AWonO3J24GKCgtJ9e4OTuaJHSBM7rcN3j28GfR6eJAJTe1Gi_AlJpG6wuFnCs&usqp=CAU" class="profile">
+        </div>
+        <div class="box">
+            <p class="card-text">First Name: @Model.FirstName</p>
+            <p class="card-text">Last Name: @Model.LastName</p>
+            <p class="card-text">Email : @Model.Email</p>
+        <p class="card-text">Phone Number: @Model.PhoneNumber</p>
+        <p class="card-text">Gender : @Model.GenderType</p>
+        <p class="card-text">Date Of Birth : @Model.DateOfBirth</p>
+        </div>
+        
+    </div>
+    <style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: Montserrat;
+    color: #b3afbf;
+}
+
+.card {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    user-select: none;
+}
+
+.cover-photo {
+    position: relative;
+    background: url(https://thumbs.dreamstime.com/b/online-shopping-concept-pink-background-online-store-women-smart-phone-screen-over-pink-office-desk-table-copy-173125052.jpg);
+    background-size: cover;
+    height: 380px;
+    border-radius: 5px 5px 0 0;
+}
+
+.profile {
+    position: absolute;
+    width: 220px;
+    bottom: -60px;
+    left: 15px;
+    border-radius: 20%;
+    border: 2px solid #222;
+    background: #222;
+    padding: 5px;
+}
+
+.profile-name {
+    font-size: 20px;
+    margin: 25px 0 0 120px;
+    color: #fff;
+}
+.box{
+    font-size:150%;
+}
+    </style>

@@ -1,0 +1,9 @@
+﻿@using EcommerceMVC.Models;
+@model PaymentModel;
+
+<h1>Your Payment is Successful</h1>
+<div class="box">
+    <p class="card-text">Transaction Id : @Model.TransactionId</p>
+    <p class="card-text">Status :@Model.Status</p>
+</div>
+<a type="button" asp-controller="Order" asp-action="OrderCreate">Place Order</a>

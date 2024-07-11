@@ -1,0 +1,23 @@
+﻿@using EcommerceMVC.ViewModel;
+@model ProductCategoryViewModel;
+
+<h1> Add New Product Category</h1>
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="mb-3">
+    <label asp-for="CategoryName" class="form-label"></label>
+    <input asp-for="CategoryName" class="form-control">
+    <span asp-validation-for="CategoryName" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Description" class="form-label"></label>
+    <input asp-for="Description" class="form-control">
+    <span asp-validation-for="Description" calss="text-danger"></span>
+  </div>
+<div class="form-row form-group">
+     <div class="col">                        
+         <input asp-for="Image" type="file" class="form-control form-control-lg" placeholder="Image" />
+         <span asp-validation-for="Image" class="text-danger"></span>
+     </div>
+</div>
+<button type="submit" class="btn btn-primary">Add</button>
+</form>

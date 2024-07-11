@@ -1,0 +1,54 @@
+﻿@using EcommerceMVC.Models;
+@model IEnumerable<Address>;
+
+
+<h3>Address book</h3>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a style="text-align:center; text-decoration:none;width:250px;height:40px; background-color:#f2d784;color:white;padding:10px;border-radius:5px" asp-area="" asp-controller="Product" asp-action="Create">+</a>
+</div>
+<ul class="row feature-list feature-list-sm">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem; border:1px solid black ; margin:6px">
+        <div id="box">
+                    <div class="card-body">
+                        <div class="card">
+                            <p class="card-text">STREET : @item.Street</p>
+                            <p class="card-text">CITY : @item.City</p>
+                            <p class="card-text">PIN CODE : @item.PostalCode</p>
+                            <p class="card-text">COUNTRY : @item.Country</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    }
+</ul>
+
+
+<style>
+    body {
+        background: #f2d784;
+
+    }
+
+    .card
+    {
+        background: url(https://thumbs.dreamstime.com/b/yellow-orange-texture-background-subtle-stains-41500911.jpg);
+    }
+
+    #box {
+        width: 600px;
+        height: 200px;
+        box-shadow: inset 1px 1px 40px 0 rgba(0, 0, 0, 0.45);
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        margin: 5% auto 0 auto;
+        background: url(https://thumbs.dreamstime.com/b/yellow-orange-texture-background-subtle-stains-41500911.jpg);
+        background-size: cover;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+
+</style>

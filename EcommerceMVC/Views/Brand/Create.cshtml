@@ -1,0 +1,18 @@
+﻿@using EcommerceMVC.ViewModel;
+@model BrandViewModel;
+
+<h1> Add New Brand</h1>
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="mb-3">
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control">
+    <span asp-validation-for="Name" calss="text-danger"></span>
+  </div>
+<div class="form-row form-group">
+     <div class="col">                        
+         <input asp-for="Logo" type="file" class="form-control form-control-lg" placeholder="Image"/>
+         <span asp-validation-for="Logo" class="text-danger"></span>
+     </div>
+</div>
+<button type="submit" class="btn btn-primary">Add</button>
+</form>

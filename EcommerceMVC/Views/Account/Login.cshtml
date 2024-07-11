@@ -1,0 +1,37 @@
+﻿@using EcommerceMVC.ViewModel;
+@using EcommerceMVC.Enum;
+@model LoginModel
+
+
+<h2>Login</h2>
+
+<h5>@ViewBag.Error</h5>
+
+<form method="post" asp-action="Login">
+    @if(ViewBag.LoginMessage!=null)
+    {
+        <div class="alert alert-success" role="alert">
+          @ViewBag.LoginMessage
+        </div>
+    }
+  <div class="mb-3">
+    <label asp-for="UserName" class="form-label"></label>
+    <input asp-for="UserName" class="form-control">
+    <span asp-validation-for="UserName" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Password" class="form-label"></label>
+    <input asp-for="Password" class="form-control">
+    <span asp-validation-for="Password" calss="text-danger"></span>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" asp-for="KeepMeLoggedIn">
+    <label class="form-check-label" asp-for="KeepMeLoggedIn">Keep Me Log In</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Create New Account</a>
+
+
+

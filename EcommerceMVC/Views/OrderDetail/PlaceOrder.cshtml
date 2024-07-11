@@ -1,0 +1,11 @@
+﻿@using EcommerceMVC.Models;
+@model OrderDetail;
+
+<h1>Order Details</h1>
+<div class="box">
+    <p class="card-text">UserName : @Model.Email</p>
+    <p class="card-text">Order Date : @Model.OrderDate</p>
+    <p class="card-text">Total Amount: @Model.OrderPrice</p>
+    <p class="card-text">Delivery Date: @Model.DeliveryDate</p>
+</div>
+<a type="button" asp-controller="Payment" asp-action="Index" asp-route-amount="@Model.OrderPrice">Payment</a>

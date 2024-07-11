@@ -1,0 +1,4 @@
+.vs/EcommerceMVC/FileContentIndex/62c6dc26-b30c-4de4-90cf-b8738fbd8fae.vsidx
+.vs/
+.vs
+.vs/EcommerceMVC/FileContentIndex/62c6dc26-b30c-4de4-90cf-b8738fbd8fae.vsidx

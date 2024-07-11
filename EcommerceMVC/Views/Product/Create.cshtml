@@ -1,0 +1,43 @@
+﻿@using EcommerceMVC.ViewModel;
+@model ProductViewModel;
+
+<h1> Add New Product</h1>
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="mb-3">
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control">
+    <span asp-validation-for="Name" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Price" class="form-label"></label>
+    <input asp-for="Price" class="form-control">
+    <span asp-validation-for="Price" calss="text-danger"></span>
+  </div>
+   <div class="mb-3">
+    <label asp-for="ManufacturingDate" class="form-label"></label>
+    <input asp-for="ManufacturingDate" class="form-control">
+    <span asp-validation-for="ManufacturingDate" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="BrandName" class="form-label"></label>
+    <input asp-for="BrandName" class="form-control">
+    <span asp-validation-for="BrandName" calss="text-danger"></span>
+  </div>
+   <div class="mb-3">
+    <label asp-for="NoOfProduct" class="form-label"></label>
+    <input asp-for="NoOfProduct" class="form-control">
+    <span asp-validation-for="NoOfProduct" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Availability" class="form-label"></label>
+    <input asp-for="Availability" class="form-control">
+    <span asp-validation-for="Availability" calss="text-danger"></span>
+  </div>
+<div class="form-row form-group">
+     <div class="col">                        
+         <input asp-for="Image" type="file" class="form-control form-control-lg" placeholder="Image"/>
+         <span asp-validation-for="Image" class="text-danger"></span>
+     </div>
+</div>
+<button type="submit" class="btn btn-primary">Add</button>
+</form>

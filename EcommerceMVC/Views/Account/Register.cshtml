@@ -1,0 +1,85 @@
+﻿@using EcommerceMVC.ViewModel;
+@using EcommerceMVC.Enum;
+@model UserViewModel
+
+<h2>Register</h2>
+
+
+<form method="post" asp-action="Register">
+  <div class="mb-3">
+    <label asp-for="FirstName" class="form-label"></label>
+    <input asp-for="FirstName" class="form-control">
+    <span asp-validation-for="FirstName" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="LastName" class="form-label"></label>
+    <input asp-for="LastName" class="form-control">
+    <span asp-validation-for="LastName" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Email" class="form-label"></label>
+    <input asp-for="Email" class="form-control">
+    <span asp-validation-for="Email" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="PhoneNumber" class="form-label"></label>
+    <input asp-for="PhoneNumber" class="form-control">
+    <span asp-validation-for="PhoneNumber" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="DateOfBirth" class="form-label"></label>
+    <input asp-for="DateOfBirth" class="form-control">
+    <span asp-validation-for="DateOfBirth" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="RoleCategory" class="form-label"></label>
+   <select asp-for="RoleCategory" asp-items="@Html.GetEnumSelectList<RoleCategory>()" class="form-control form-control-lg">
+               <option>--Select--</option>
+   </select>
+   <span asp-validation-for="RoleCategory" calss="text-danger"></span>
+   </div>
+   <div class="mb-3">
+    <label asp-for="GenderType" class="form-label"></label>
+   <select asp-for="GenderType" asp-items="@Html.GetEnumSelectList<GenderType>()" class="form-control form-control-lg">
+               <option>--Select--</option>
+   </select>
+   <span asp-validation-for="GenderType" calss="text-danger"></span>
+   </div>
+   <div class="mb-3">
+    <label asp-for="Address.Street" class="form-label"></label>
+    <input asp-for="Address.Street" class="form-control">
+    <span asp-validation-for="Address.Street" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Address.City" class="form-label"></label>
+    <input asp-for="Address.City" class="form-control">
+    <span asp-validation-for="Address.City" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Address.State" class="form-label"></label>
+    <input asp-for="Address.State" class="form-control">
+    <span asp-validation-for="Address.State" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Address.PostalCode" class="form-label"></label>
+    <input asp-for="Address.PostalCode" class="form-control">
+    <span asp-validation-for="Address.PostalCode" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Address.Country" class="form-label"></label>
+    <input asp-for="Address.Country" class="form-control">
+    <span asp-validation-for="Address.Country" calss="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Password" class="form-label"></label>
+    <input asp-for="Password" class="form-control">
+    <span asp-validation-for="Password" calss="text-danger"></span>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+

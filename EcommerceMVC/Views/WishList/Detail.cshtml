@@ -1,0 +1,29 @@
+﻿@using EcommerceMVC.Models;
+@model IEnumerable<Product>;
+
+<h1>WishList Product</h1>
+<ul class="row feature-list feature-list-sm">
+    @foreach (var item in Model)
+    {
+       <div class="card" style="width: 200px;height:420px; border:1px solid black ; margin:6px">
+          <div class="card-body">
+              <h5 class="card-title">@item.Name</h5>
+              <p class="card-text">Manufacturing Date: @item.ManufacturingDate</p>
+              <p class="card-text">Price: @item.Price</p>
+              <p class="card-text">Availability: @item.Availability</p>
+                 <div class="card">
+                        @if (@item.Image != null)
+                        {
+                            <img class="card-img-top" src="@item.Image" alt="Card image cap">   
+                        }
+                        else
+                        {
+                            <img class="card-img-top" src="/img/rungroopclub.png" alt="Card image cap">   
+                        }
+                        <a type="button" asp-controller="Product" asp-action="AddToCart" asp-route-id="@item.Id">Add To Cart</a>
+                        <a type="button" asp-controller="WishList" asp-action="Remove" asp-route-id="@item.Id">Remove</a>
+                  </div>
+            </div>
+       </div>
+    }
+</ul>
